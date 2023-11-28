@@ -9,40 +9,25 @@
         <h2> S'inscrire </h2>
 
         <p>
-            <label> Titre: </label> 
-            <input type="text" name="Titre"  value="">
-            <label> Année: </label>
-            <input type="number" name="Anne">
-        </p>
-
-        <p>
-            <label for="tdc">Comédie: </label>
-            <input type="checkbox" id="tdc">
-
-            <label for="tdc">Drame: </label>
-            <input type="checkbox" id="tdc">
+            <label> Id </label> 
+            <input type="number" name="Id"  value="">
             
-            <label for="tdc">Histoire: </label>
-            <input type="checkbox" id="tdc">
-
         </p>
-        <label >Résumé: </label>
-        <textarea placeholder="mots clés du résumé"></textarea>
 
         <p>
-            <label >Metteur en scéne: </label>
-            <select>
-                <option selected>Quentin Tarantino</option>
-                <option>Pub</option>
-                <option>On vous en a parlé</option>
-            </select>   
+            <label> Name </label>
+            <input type="texte" name="Name">
         </p>
-
-        <label >Votre choix ? </label>
-
+        <p>
+            <label> Vorname </label>
+            <input type="texte" name="Vorname">
+        </p>
+        <p>
+            <label> Email </label>
+            <input type="texte" name="Email">
+        </p>
         <p> 
-            <input type="submit" value="Rechercher" name="bouton1">
-            <input type="submit" value="Annuler" name="bouton2">
+            <input type="submit" value="Valider" name="Valider">
         </p>
 
     </form>
