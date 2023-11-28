@@ -9,12 +9,6 @@
         <h2> S'inscrire </h2>
 
         <p>
-            <label> Id </label> 
-            <input type="number" name="Id"  value="<?php $Id_Users?>">
-            
-        </p>
-
-        <p>
             <label> Name </label>
             <input type="texte" name="Name" value="<?php $name?>">
         </p>

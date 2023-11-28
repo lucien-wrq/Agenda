@@ -1,6 +1,6 @@
 <?php
 // Chemin vers votre fichier de base de données SQLite
-$databaseFile = 'BDD.db';
+$databaseFile = 'Back/BDD.db';
 
 try {
     // Connexion à la base de données SQLite
@@ -20,7 +20,7 @@ try {
 
     // Affichage des données récupérées
     foreach ($Id as $Id) {
-        echo "ID: {$Id['id']}<br>";
+        echo "ID: {$Id['Id_Users']} \n";
     }
 
     // Fermeture de la connexion à la base de données
