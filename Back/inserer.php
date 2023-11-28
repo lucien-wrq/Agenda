@@ -5,9 +5,11 @@ $name = $_POST['Name'];
 $vorname = $_POST['Vorname'];
 $email = $_POST['Email'];
 
+$databaseFile = 'BDD.db';
+
 // Ouvrir la connexion à la base de données SQLite
 try {
-    $db = new PDO('BDD.db');
+    $db = new PDO('sqlite:BDD.db');
 } catch (PDOException $e) {
     die("Erreur de connexion : " . $e->getMessage());
 }
