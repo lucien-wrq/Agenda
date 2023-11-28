@@ -24,8 +24,8 @@ try {
     // Liaison des valeurs avec les paramètres de la requête
     $stmt->bindParam(':Id_Users', $Id_Users, PDO::PARAM_INT);
     $stmt->bindParam(':name', $name, PDO::PARAM_STR);
-    $stmt->bindParam(':vorname', $vorname, PDO::PARAM_INT);
-    $stmt->bindParam(':email', $email, PDO::PARAM_INT);
+    $stmt->bindParam(':vorname', $vorname, PDO::PARAM_STR);
+    $stmt->bindParam(':email', $email, PDO::PARAM_STR);
 
     // Exécution de la requête
     $stmt->execute();
