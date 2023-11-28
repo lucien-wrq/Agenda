@@ -10,10 +10,12 @@ try {
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Exemple d'insertion de données dans la table "Employes"
-    $Id_Users = 4;
-    $name = 'John';
-    $vorname = 'DOE';
-    $email = 'johndoe@gmail.com';
+    if(isset($_POST['Valider'])){
+        $Id_Users = $_POST["Id"];
+        $name = $_POST["Name"];
+        $vorname = $_POST["Vorname"];
+        $email = $_POST["Email"];
+    }
 
     // Requête SQL d'insertion
     $query = "INSERT INTO Users (Id_Users, name, vorname, email) VALUES (:Id_Users, :name, :vorname, :email)";
