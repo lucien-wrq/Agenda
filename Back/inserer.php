@@ -15,10 +15,10 @@ try {
 }
 
 // Préparer la requête SQL
-$sql = "INSERT INTO Users ($Id_Users, $name, $vorname,email) VALUES (:Id_Users, :name, :vorname, :email)";
+$query = "INSERT INTO Users ($Id_Users, $name, $vorname,email) VALUES (:Id_Users, :name, :vorname, :email)";
 
 // Préparer la requête SQL avec PDO
-$stmt = $db->prepare($sql);
+$stmt = $db->prepare($query);
 
 // Binder les paramètres
 $stmt->bindParam(':Id_Users', $Id_Users, PDO::PARAM_INT);
