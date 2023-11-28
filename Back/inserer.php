@@ -19,7 +19,7 @@ $sql = "INSERT INTO votre_table (Id_Users, name, vorname, email) VALUES (:Id_Use
 $stmt = $db->prepare($sql);
 
 // Binder les paramètres
-$stmt->bindParam(':iId_Users', $Id_Users, PDO::PARAM_INT);
+$stmt->bindParam(':Id_Users', $Id_Users, PDO::PARAM_INT);
 $stmt->bindParam(':name', $name, PDO::PARAM_STR);
 $stmt->bindParam(':vorname', $vorname, PDO::PARAM_STR);
 $stmt->bindParam(':email', $email, PDO::PARAM_STR);
