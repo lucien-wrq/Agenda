@@ -4,7 +4,7 @@
 ?>
 
 <body>
-    <form action="inserer.php" method="POST">
+    <form action="insererusers.php" method="POST">
 
         <h2> S'inscrire </h2>
 
