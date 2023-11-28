@@ -9,7 +9,7 @@ $databaseFile = 'BDD.db';
 
 // Ouvrir la connexion à la base de données SQLite
 try {
-    $db = new PDO('sqlite:BDD.db');
+    $db = new PDO("sqlite:$databaseFile");
 } catch (PDOException $e) {
     die("Erreur de connexion : " . $e->getMessage());
 }
