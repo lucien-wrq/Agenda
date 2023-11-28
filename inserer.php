@@ -11,19 +11,19 @@ try {
 
     // Exemple d'insertion de données dans la table "Employes"
     $Id_Users = 4;
-    $name1 = 'John';
+    $name = 'John';
     $vorname = 'DOE';
     $email = 'johndoe@gmail.com';
 
     // Requête SQL d'insertion
-    $query = "INSERT INTO Users (Id_Users, name1, vorname, email) VALUES (:Id_Users, :name1, :vorname, :email)";
+    $query = "INSERT INTO Users (Id_Users, name, vorname, email) VALUES (:Id_Users, :name, :vorname, :email)";
 
     // Préparation de la requête
     $stmt = $db->prepare($query);
 
     // Liaison des valeurs avec les paramètres de la requête
     $stmt->bindParam(':Id_Users', $Id_Users, PDO::PARAM_INT);
-    $stmt->bindParam(':name1', $name1, PDO::PARAM_STR);
+    $stmt->bindParam(':name', $name, PDO::PARAM_STR);
     $stmt->bindParam(':vorname', $vorname, PDO::PARAM_INT);
     $stmt->bindParam(':email', $email, PDO::PARAM_INT);
 
