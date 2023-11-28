@@ -24,17 +24,17 @@ $stmt->bindParam(':Id_Users', $Id_Users, PDO::PARAM_INT);
 $stmt->bindParam(':name', $name, PDO::PARAM_STR);
 $stmt->bindParam(':vorname', $vorname, PDO::PARAM_STR);
 $stmt->bindParam(':email', $email, PDO::PARAM_STR);
-echo $email;
+
 // Exécuter la requête
 if ($stmt->execute()) {
     echo "Enregistrement réussi";
-    echo $email;
+
 } else {
     echo "Erreur : " . print_r($stmt->errorInfo(), true);
-    echo $email;
+
 }
 
 // Fermer la connexion
 $db = null;
-echo $email;
+
 ?>
