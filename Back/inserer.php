@@ -4,18 +4,17 @@ $Id_Users = $_POST['Id'];
 $name = $_POST['Name'];
 $vorname = $_POST['Vorname'];
 $email = $_POST['Email'];
-echo $email;
+
 // Ouvrir la connexion à la base de données SQLite
 try {
-    $db = new PDO('C:\wamp64\www\agenda\Back\BDD.db');
-    echo $email;
+    $db = new PDO('sqlite:BDD.db');
 } catch (PDOException $e) {
     die("Erreur de connexion : " . $e->getMessage());
 }
 
 // Préparer la requête SQL
 $sql = "INSERT INTO votre_table (Id_Users, name, vorname, email) VALUES (:Id_Users, :name, :vorname, :email)";
-echo $email;
+
 // Préparer la requête SQL avec PDO
 $stmt = $db->prepare($sql);
 echo $email;
