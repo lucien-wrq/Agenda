@@ -1,8 +1,20 @@
 <?php
+
 // Récupérer les données du formulaire HTML
 $name = $_POST['Name'];
 $vorname = $_POST['Vorname'];
-$email = $_POST['Email'];
+
+// Fonction de validation d'une adresse e-mail
+function validateEmail($email) {
+    // Utilisation de filter_var avec FILTER_VALIDATE_EMAIL
+    return filter_var($email, FILTER_VALIDATE_EMAIL);
+}
+
+if (validateEmail($_POST['Email'])) {
+    $email = $_POST['Email'];
+} else {
+    echo "L'adresse e-mail n'est pas valide.";
+}
 
 // Ouvrir la connexion à la base de données SQLite
 try {
