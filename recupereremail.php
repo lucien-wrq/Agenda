@@ -20,7 +20,7 @@ try {
 
     // Affichage des données récupérées
     foreach ($email as $email) {
-        echo "Email: {$email['email']}";
+        echo "Email: {$email['email']} \n";
     }
 
     // Fermeture de la connexion à la base de données
