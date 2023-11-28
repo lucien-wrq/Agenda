@@ -17,12 +17,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
+
+
 <form method="post" action="ajout_evenement.php">
     Titre: <input type="text" name="titre"><br>
     Date de début: <input type="datetime-local" name="date_debut"><br>
     Date de fin: <input type="datetime-local" name="date_fin"><br>
     <input type="submit" value="Ajouter événement">
 </form>
+
+
 
 <?php
 include 'connexion.php';
