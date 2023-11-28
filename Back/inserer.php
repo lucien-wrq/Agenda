@@ -44,10 +44,10 @@ try {
 
 <?php
 // Récupérer les données du formulaire HTML
-$id = $_POST['id'];
-$firstname = $_POST['firstname'];
-$lastname = $_POST['lastname'];
-$email = $_POST['email'];
+$id = $_POST['Id'];
+$name = $_POST['Name'];
+$vorname = $_POST['Vorname'];
+$email = $_POST['Email'];
 
 // Ouvrir la connexion à la base de données SQLite
 try {
