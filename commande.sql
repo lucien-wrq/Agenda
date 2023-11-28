@@ -1,6 +1,6 @@
 CREATE TABLE "Roles" (
 	"id_role"	INTEGER NOT NULL UNIQUE,
-	", role_nam"	TEXT
+	"role_nam"	TEXT
 )
 
 CREATE TABLE "Users" (
