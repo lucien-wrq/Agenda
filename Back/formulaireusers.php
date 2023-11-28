@@ -18,7 +18,7 @@
         </p>
         <p>
             <label> Email </label>
-            <input type="texte" name="Email" value="<?php $email?>">
+            <input type="email" name="Email" value="<?php $email?>">
         </p>
         <p> 
             <input type="submit" value="Valider" name="Valider">

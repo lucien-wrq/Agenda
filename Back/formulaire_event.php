@@ -10,11 +10,11 @@
 
         <p>
             <label> Titre </label>
-            <input type="texte" name="Titre" value="<?php $name?>">
+            <input type="texte" name="Titre" value="<?php $titre?>">
         </p>
         <p>
-            <label> Date </label>
-            <input type="texte" name="Vorname" value="<?php $vorname?>">
+        <label for="date">Sélectionnez une date :</label>
+        <input type="date" name="date" required value="<?php $date?>">
         </p>
         <p>
             <label> Email </label>
