@@ -10,3 +10,8 @@ CREATE TABLE "Users" (
 	"email"	TEXT NOT NULL
 )
 
+CREATE TABLE "Groups" (
+	"Id_Groups"	INTEGER NOT NULL UNIQUE,
+	"Groups_name"	TEXT NOT NULL
+)
+
