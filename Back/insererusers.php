@@ -14,6 +14,7 @@ if (validateEmail($_POST['Email'])) {
     $email = $_POST['Email'];
 } else {
     echo "L'adresse e-mail n'est pas valide.";
+    exit();
 }
 
 // Ouvrir la connexion à la base de données SQLite
