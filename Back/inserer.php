@@ -1,6 +1,6 @@
 <?php
 // Récupérer les données du formulaire HTML
-$id = $_POST['Id'];
+$Id_Users = $_POST['Id'];
 $name = $_POST['Name'];
 $vorname = $_POST['Vorname'];
 $email = $_POST['Email'];
@@ -13,15 +13,15 @@ try {
 }
 
 // Préparer la requête SQL
-$sql = "INSERT INTO votre_table (id, prenom, nom, email) VALUES (:id, :prenom, :nom, :email)";
+$sql = "INSERT INTO votre_table (Id_Users, name, vorname, email) VALUES (:Id_Users, :name, :vorname, :email)";
 
 // Préparer la requête SQL avec PDO
 $stmt = $db->prepare($sql);
 
 // Binder les paramètres
-$stmt->bindParam(':id', $id, PDO::PARAM_INT);
-$stmt->bindParam(':prenom', $firstname, PDO::PARAM_STR);
-$stmt->bindParam(':nom', $lastname, PDO::PARAM_STR);
+$stmt->bindParam(':iId_Users', $Id_Users, PDO::PARAM_INT);
+$stmt->bindParam(':name', $name, PDO::PARAM_STR);
+$stmt->bindParam(':vorname', $vorname, PDO::PARAM_STR);
 $stmt->bindParam(':email', $email, PDO::PARAM_STR);
 
 // Exécuter la requête
