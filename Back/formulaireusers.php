@@ -1,8 +1,3 @@
-<?php
-
-
-?>
-
 <body>
     <form action="insererusers.php" method="POST">
 
