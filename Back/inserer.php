@@ -1,6 +1,6 @@
 <?php
 // Récupérer les données du formulaire HTML
-$id = $_POST['Id'];
+$Id_Users = $_POST['Id'];
 $name = $_POST['Name'];
 $vorname = $_POST['Vorname'];
 $email = $_POST['Email'];
