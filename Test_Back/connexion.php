@@ -8,10 +8,7 @@ $database = "agenda";
 $conn = new mysqli($servername, $username, $password, $database);
 
 $sql = "SELECT * From users";
-
-// Préparer la requête SQL avec PDO
-$stmt = $db->prepare($sql);
-$stmt->execute();
+$result = $conn->query($sql);
 
 $conn->close();
 ?>
