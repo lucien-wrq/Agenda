@@ -10,11 +10,11 @@
 
         <p>
             <label> Titre </label>
-            <input type="texte" name="Titre" value="<?php $titre?>">
+            <input type="texte" name="Titre" value="<?= $titre?>">
         </p>
         <p>
         <label for="date">Sélectionnez une date :</label>
-        <input type="date" name="date" required value="<?php $date?>">
+        <input type="date" name="date" required value="<?= $date?>">
         </p>
         <label> Plage Horaire </label>
         <label for="heure_debut">Heure de début :</label>
