@@ -1,45 +1,73 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "agenda";
 
-$conn = new mysqli($servername, $username, $password, $database);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+try {
+    $db = new PDO('sqlite:BDD2.db');
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Set error mode to exception
+} catch (PDOException $e) {
+    die("Erreur de connexion : " . $e->getMessage());
 }
 
+// Vérifier si le formulaire de connexion a été soumis
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST["email"];
-    $fullname = $_POST["mdp"];
+    // Récupérer les données du formulaire
+    $email = $_POST["email"];
+    $password = $_POST["password"];
 
-    $sql = "SELECT * FROM `Users` WHERE `email` = ? AND `password` = ?";
-    $stmt = $conn->prepare($sql);
-    
-    if ($stmt === false) {
-        die("Error in preparing statement: " . $conn->error);
-    }
-    
-    $stmt->bind_param("ss", $username, $fullname);
-    $stmt->execute();
+    // Valider l'utilisateur dans la base de données
+    $sql = "SELECT id_user, password, role_id FROM users WHERE email = ?";
+    $stmt = $db->prepare($sql);
+    $stmt->execute([$email]);
 
-    $result = $stmt->get_result();
+    // Récupérer les résultats de la requête
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if ($result->num_rows > 0) {
-        // Rediriger vers une page existante (remplacez "page_existante.html" par le chemin réel de votre page)
-        // header("Location: QUELQUEPART.html");
-        $_SESSION['email'] = $username;
-        header('Location: http://localhost/PHP/Agenda/Agenda/Test_Back/session.php');
-        echo "c'est OK";
-        exit();  // Assurez-vous de terminer l'exécution du script après la redirection
+    // Vérifier le mot de passe
+    if ($user && password_verify($password, $user['password'])) {
+        // L'utilisateur est validé avec succès
+        // Vous pouvez maintenant utiliser $user['id_user'] et $user['role_id'] dans votre logique de redirection
+        if ($user['role_id'] == 1) {
+            // Redirection pour l'utilisateur normal
+            header("Location: page_user.html");
+            exit();
+        } elseif ($user['role_id'] == 2) {
+            // Redirection pour l'administrateur
+            header("Location: page_admin.html");
+            exit();
+        } else {
+            // Cas où le rôle n'est ni 1 ni 2 (par exemple, gestion des erreurs)
+            echo "Rôle non valide";
+        }
     } else {
-        // Rediriger vers une autre page (remplacez "page_inexistante.html" par le chemin réel de votre page)
-        echo "Les informations n'existent pas dans la base de données.";
+        // Échec de validation, par exemple mauvais email ou mot de passe
+        echo "Échec de la connexion.";
     }
-    
-    $stmt->close();
 }
-
-$conn->close();
 ?>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+</head>
+<body>
+
+    <h2>Connexion</h2>
+
+    <form action="formulaire_connexion.php" method="post">
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required>
+
+        <br>
+
+        <label for="mdp">Mot de passe :</label>
+        <input type="password" id="mdp" name="mdp" required>
+
+        <br>
+
+        <input type="submit" value="Check">
+    </form>
+
+</body>
+</html>
