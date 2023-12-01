@@ -27,11 +27,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Vous pouvez maintenant utiliser $user['id_user'] et $user['role_id'] dans votre logique de redirection
         if ($user['role_id'] == 1) {
             // Redirection pour l'utilisateur normal
-            header("Location: page_utilisateur.php");
+            header("Location: page_user.html");
             exit();
         } elseif ($user['role_id'] == 2) {
             // Redirection pour l'administrateur
-            header("Location: page_admin.php");
+            header("Location: page_admin.html");
             exit();
         } else {
             // Cas où le rôle n'est ni 1 ni 2 (par exemple, gestion des erreurs)
