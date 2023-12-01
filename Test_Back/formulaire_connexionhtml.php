@@ -1,3 +1,8 @@
+<?php
+    // Commencer une nouvelle session ou reprendre une session existante
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>

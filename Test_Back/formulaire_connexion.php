@@ -29,6 +29,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows > 0) {
         // Rediriger vers une page existante (remplacez "page_existante.html" par le chemin réel de votre page)
         // header("Location: QUELQUEPART.html");
+        $_SESSION['email'] = $username;
+        header('Location: http://localhost/PHP/Agenda/Agenda/Test_Back/session.php');
         echo "c'est OK";
         exit();  // Assurez-vous de terminer l'exécution du script après la redirection
     } else {
