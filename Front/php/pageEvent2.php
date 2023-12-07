@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="ajouterunevent2.css" rel="stylesheet">
+    <link href="../css/ajouterunevent2.css" rel="stylesheet">
     <title>Ajouter un Événement</title>
 
 </head>
@@ -48,7 +48,7 @@
         <br><input type="datetime-local" id="start_date" name="start_date" required><br>
 
         <label for="eventEndDate">Date de Fin :</label>
-        <br><input type="datetime-local" id="end_date" name="end_date"" required>
+        <br><input type="datetime-local" id="end_date" name="end_date" required>
 
         <input type="submit" name="submit" value="Valider" class="box-button" />
     </form>

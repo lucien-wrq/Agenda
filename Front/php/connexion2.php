@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="Front/css/connexion2.css" rel="stylesheet">
+    <link href="../css/connexion2.css" rel="stylesheet">
     <div class="wrapper fadeInDown">
         <div id="formContent">
           
