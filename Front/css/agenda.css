@@ -1,15 +1,28 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
 :root {
-    --numDays: 5;
-    --numHours: 24;
-    --timeHeight: 60px;
-    --calBgColor: #fff1f8;
-    --eventBorderColor: #f2d3d8;
-    --eventColor1: #ffd6d1;
-    --eventColor2: #fafaa3;
-    --eventColor3: #e2f8ff;
-    --eventColor4: #d1ffe6;
-  }
+  --numDays: 5;
+  --numHours: 25;
+  --timeHeight: 60px;
+  --calBgColor: ;
+  --eventBorderColor: #C1E9F2;
+  --eventColor1: #fafafa;
+  --eventColor2: #fafafa;
+  --eventColor3: #fafafa;
+  --eventColor4: #fafafa;
+}
   
+  i {
+    font-size: 50px ; 
+    color: #646AD9;
+  }
+  .button-19logo {
+     background-color: #56baed
+  }
+  .column {
+    color: #646AD9;
+    
+  }
+
   .conteneur-calendrier {
     display: flex;
     flex-direction: column;
@@ -19,7 +32,6 @@
     display: grid;
     gap: 10px;
     grid-template-columns: auto 1fr;
-    margin: 2rem;
     flex-grow: 1;
   }
   
@@ -44,7 +56,9 @@
     background: var(--calBgColor);
   }
   
-
+  .start-00 {
+    grid-row-start: 00;
+  }
   .start-01 {
     grid-row-start: 01;
   }
@@ -131,12 +145,12 @@
     grid-row-start: 23;
   }
   
-  .start-00 {
-    grid-row-start: 00;
+  .start-24 {
+    grid-row-start: 24;
   }
-  
-  
-  
+  .end-00{
+    grid-row-end: 00;
+  }
   .end-01 {
     grid-row-end: 01;
   }
@@ -150,7 +164,7 @@
   }
   
   .end-04 {
-    grid-row-end: 04;
+    grid-row-end: 4;
   }
   .end-05 {
     grid-row-end: 05;
@@ -222,8 +236,14 @@
     grid-row-end: 23;
   }
   
-  .end-00{
-    grid-row-end: 00;
+  .end-24{
+    grid-row-end: 24;
+  }
+  .end-25 {
+    grid-row-end: 25;
+  }
+  .end-26 {
+    grid-row-end: 26;
   }
   
 
@@ -238,17 +258,14 @@
     border-radius: 5px;
     padding: 0.5rem;
     margin: 0 0.5rem;
-    background: white;
+    background: #fafafa;
   }
   
   .space,
   .date {
-    height: 60px
+    height: 60px;
   }
-  
-
-  
-  body {
+    body {
     font-family: system-ui, sans-serif;
     margin-top: 5%;
   }
@@ -289,12 +306,12 @@
   }
   .button-19 {
     appearance: button;
-    background-color: #1899D6;
+    background-color: #646AD9;
     border: solid transparent;
     border-radius: 16px;
     border-width: 0 0 4px;
     box-sizing: border-box;
-    color: #FFFFFF;
+    color: #ffffff;
     cursor: pointer;
     font-family: din-round,sans-serif;
     font-weight: 700;
@@ -333,7 +350,7 @@
 
   .button-19:after {
     background-clip: padding-box;
-    background-color: #1CB0F6;
+    background-color: #646AD9;
     border: solid transparent;
     border-radius: 16px;
     border-width: 0 0 4px;
@@ -371,7 +388,7 @@
     left: 0;
     right: 0;
     width: 100%;
-    background-color: #1CB0F6; /* Couleur de fond de l'en-tête */
+    background-color: #56baed; /* Couleur de fond de l'en-tête */
     color: white; /* Couleur du texte de l'en-tête */
     padding: 10px 0; /* Padding pour l'en-tête */
     z-index: 1000; /* S'assurer que l'en-tête reste au-dessus des autres éléments */
@@ -388,15 +405,16 @@
 }
 
 header {
-    background-color:#0099ff;
+    background-color:#56baed;
     color: #fff;
     padding: 10px;
     text-align: center;
 }
 
 section {
-    max-width: 800px;
-    margin: 20px auto;
+    display:block;
+    margin-top: 5% 0;
+    margin: 20px 0;
     padding: 20px;
     background-color: #fff;
     border-radius: 5px;
@@ -423,7 +441,7 @@ input, textarea {
 
 button {
     padding: 10px;
-    background-color:#0099ff;
+    background-color:#56baed;
     color: #fff;
     border: none;
     border-radius: 3px;
@@ -431,6 +449,55 @@ button {
     font-size: 16px;
 }
 
-button:hover {
-    background-color: #555;
+.button-19:hover {
+    background-color: #000000;
 }
+
+ 
+* {
+  box-sizing: border-box;
+}
+
+/* Créer quatre colonnes égales qui flottent à côté de l'autre */
+.column {
+  float: left;
+  width: 20%;
+  padding: 10px;
+}
+
+/* Effacer les flottants après les colonnes */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style des blocs d'événements */
+.event {
+  background-color: #f1f1f1;
+  border: 1px solid #d4d4d4;
+  margin: 10px;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+}
+
+/* Style des titres d'événements */
+.event h3 {
+  color: #333;
+  font-size: 18px;
+}
+
+/* Style des dates et des horaires d'événements */
+.event p {
+  color: #666;
+  font-size: 14px;
+}
+form {
+  margin-left: 0%;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+
