@@ -14,7 +14,7 @@ if($_SESSION['user_role'] == 1){
 <head>
         <meta charset="utf-8">
         <title>agenda</title>
-        <link href="user.css" rel="stylesheet">
+        <link href="../css/user.css" rel="stylesheet">
 </head>
 <body>
 <div class="user-info">

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="modifierunevent2.css" rel="stylesheet">
+    <link href="../css/modifierunevent2.css" rel="stylesheet">
     <title>Modifier un Événement</title>
     
 </head>
