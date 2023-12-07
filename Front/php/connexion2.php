@@ -2,7 +2,7 @@
 session_start();
 
 try {
-    $db = new PDO('sqlite:BDD2.db');
+    $db = new PDO('sqlite:../../Back/BDD/BDD2.db');
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Set error mode to exception
 } catch (PDOException $e) {
     die("Erreur de connexion : " . $e->getMessage());
