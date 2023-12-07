@@ -7,7 +7,7 @@
     <title>Inscription</title>
 </head>
 <body>
-    <form class="box" action="insererusers.php" method="post">
+    <form class="box" action="../../Back/BDD/exploitation_BDD/insererusers.php" method="post">
 
         <h1 class="box-title">S'inscrire</h1>
 
@@ -28,8 +28,9 @@
         <select id="group" name="group">
 
         <?php
+
             try {
-                $db = new PDO('sqlite:BDD2.db');
+                $db = new PDO('sqlite:../../Back/BDD/BDD2.db');
                 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
             // Récupération des ID des événements depuis la base de données

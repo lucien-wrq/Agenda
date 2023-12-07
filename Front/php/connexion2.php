@@ -50,9 +50,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Redirect based on the user's role
             if ($user['id_role'] == 1) {
-                header("Location: page_user.php");
+                header("Location: ../../Test_Back/exploitation_BDD/page_user.php");
             } elseif ($user['id_role'] == 2) {
-                header("Location: page_admin.php");
+                header("Location: ../../Test_Back/exploitation_BDD/page_admin.php");
             } else {
                 // Handle other roles if needed
                 echo "Role not supported";

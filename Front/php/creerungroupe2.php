@@ -9,7 +9,7 @@
 
 </head>
 <body> 
-    <form class="box" action="creation_teams.php" method="post">
+    <form class="box" action="../../Back/BDD/exploitation_BDD/creation_teams.php" method="post">
     <h1 class="box-title">Créer un groupe</h1>
 
     <input type="text" class="box-input" id="label" name="label" placeholder="Nom du groupe" required />

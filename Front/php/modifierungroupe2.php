@@ -7,13 +7,13 @@
     <title>Modifier un Groupe</title>
 </head>
 <body>
-    <form class="box" action="modif_teams.php" method="post">
+    <form class="box" action="../../Back/BDD/exploitation_BDD/modif_teams.php" method="post">
         <h1 class="box-title">Modifier un groupe </h1>
         <select class="box-input" name="id_team" id="id_team" placeholder="Nom du groupe" required />
         <!-- PHP pour récupérer les labels et ID des événements depuis la base de données -->
             <?php
                 try {
-                    $db = new PDO('sqlite:BDD2.db');
+                    $db = new PDO('sqlite:../../Back/BDD/BDD2.db');
                     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
                     // Récupération des labels et ID des événements depuis la base de données

@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <form class="box" action="modif_event.php" method="post">
+    <form class="box" action="../../Back/BDD/exploitation_BDD/modif_event.php" method="post">
 
         <h1 class="box-title">Modifier un événement</h1>
 
