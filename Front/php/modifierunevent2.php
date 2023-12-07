@@ -17,7 +17,7 @@
                     <!-- PHP pour récupérer les labels et ID des événements depuis la base de données -->
                     <?php
                     try {
-                        $db = new PDO('sqlite:BDD2.db');
+                        $db = new PDO('sqlite:../../Back/BDD/BDD2.db');
                         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
                         // Récupération des labels et ID des événements depuis la base de données
@@ -38,13 +38,13 @@
         </select><br>
 
         <label for="eventName">Nom de l'Événement :</label>
-        <input type="text" id="eventName" name="eventName" placeholder = "Nom " required>
+        <input type="text" id="eventName" name="eventName" placeholder = "Nom " required><br>
         
         <label for="eventStartDate">Date de Début :</label>
-        <br><input type="datetime-local" id="eventStartDate" name="eventStartDate" required>
+        <br><input type="datetime-local" id="eventStartDate" name="eventStartDate" required><br>
 
         <label for="eventEndDate">Date de Fin :</label>
-        <br><input type="datetime-local" id="eventEndDate" name="eventEndDate" required>
+        <br><input type="datetime-local" id="eventEndDate" name="eventEndDate" required><br>
 
         <input type="submit" name="submit" value="Enregistrer les modifications" class="box-button" />
     
