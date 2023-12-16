@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../css/modifierunevent2.css" rel="stylesheet">
     <title>Modifier un Événement</title>
-    
+    <?php
+    session_start();
+    $id_user = $_SESSION["user_id"];
+    ?>
 </head>
 <body>
 
@@ -16,12 +19,14 @@
         <select name="id_event" id="id_event">
                     <!-- PHP pour récupérer les labels et ID des événements depuis la base de données -->
                     <?php
+                    
+
                     try {
                         $db = new PDO('sqlite:../../Back/BDD/BDD2.db');
                         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
                         // Récupération des labels et ID des événements depuis la base de données
-                        $sql = "SELECT id_event, label FROM events";
+                        $sql = "SELECT id_event, label FROM events WHERE id_user = :id_user";
                         $stmt = $db->query($sql);
                         $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

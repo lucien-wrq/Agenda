@@ -52,7 +52,10 @@ echo ("Bienvenu ". $_SESSION["user_lastname"]);
   <div class="conteneur-calendrier">
     <div class="header">
   <div class="conteneur-boutons">
-    
+
+  <a href="pageEvent2.php"><button class="button-19" role="button">créer un event </button></a>
+  <a href="modifierunevent2.php"><button class="button-19" role="button">modifier un event </button></a>
+
   <a href="infocompte2.php"><button class="button-19logo" role="button"><i class="fa-solid fa-user" style="color: #646ad9;"></i></button></a>
   <div style="clear: both;"></div>
   </div>
