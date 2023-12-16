@@ -1,0 +1,98 @@
+CREATE TABLE "agendas" (
+	"id_agenda"	INT  UNIQUE,
+	"type"	VARCHAR(50),
+	"label"	VARCHAR(50),
+	"description"	VARCHAR(1000),
+	"creator_id"	INT,
+	"creation_date"	DATETIME,
+	"last_modification_date"	DATETIME,
+	PRIMARY KEY("id_agenda")
+);
+
+CREATE TABLE "events" (
+	"id_event"	INT ,
+	"label"	VARCHAR(50),
+	"description"	VARCHAR(1000),
+	"place"	VARCHAR(50),
+	"start_date"	DATETIME,
+	"end_date"	DATETIME,
+	"creator_id"	INT,
+	"creation_date"	DATETIME,
+	"last_modification_date"	DATETIME,
+	PRIMARY KEY("id_event")
+);
+
+CREATE TABLE "events_concerns_agendas" (
+	"id_event"	INT,
+	"id_agenda"	INT,
+	PRIMARY KEY("id_event","id_agenda"),
+	FOREIGN KEY("id_agenda") REFERENCES "agendas"("id_agenda"),
+	FOREIGN KEY("id_event") REFERENCES "events"("id_event")
+);
+
+CREATE TABLE "roles" (
+	"id_role"	INT ,
+	"name"	VARCHAR(50),
+	PRIMARY KEY("id_role")
+);
+
+CREATE TABLE "teams" (
+	"id_team"	INTEGER UNIQUE,
+	"label"	VARCHAR(50),
+	"description"	VARCHAR(1000),
+	"creator_id"	INT,
+	"creation_date"	DATETIME,
+	"last_modification_date"	DATETIME,
+	PRIMARY KEY("id_team" )
+);
+
+CREATE TABLE teams_has_agendas (
+    id_team INT,
+    id_agenda INT,
+    PRIMARY KEY (id_team, id_agenda),
+    FOREIGN KEY (id_team) REFERENCES teams(id_team),
+    FOREIGN KEY (id_agenda) REFERENCES agendas(id_agenda)
+)
+
+CREATE TABLE users (
+    id_user INT  PRIMARY KEY,
+    lastname VARCHAR(50),
+    firstname VARCHAR(50),
+    email VARCHAR(50),
+    password VARCHAR(32),
+    creation_date DATETIME,
+    last_login_date DATETIME,
+    last_modified_date DATETIME
+)
+
+CREATE TABLE users_has_agendas (
+    id_user INT,
+    id_agenda INT,
+    PRIMARY KEY (id_user, id_agenda),
+    FOREIGN KEY (id_user) REFERENCES users(id_user),
+    FOREIGN KEY (id_agenda) REFERENCES agendas(id_agenda)
+)
+
+CREATE TABLE users_has_roles (
+    id_user INT,
+    id_role INT,
+    PRIMARY KEY (id_user, id_role),
+    FOREIGN KEY (id_user) REFERENCES users(id_user),
+    FOREIGN KEY (id_role) REFERENCES roles(id_role)
+)
+
+CREATE TABLE users_has_teams (
+    id_user INT,
+    id_team INT,
+    PRIMARY KEY (id_user, id_team),
+    FOREIGN KEY (id_user) REFERENCES users(id_user),
+    FOREIGN KEY (id_team) REFERENCES teams(id_team)
+)
+
+CREATE TABLE users_manage_events (
+    id_user INT,
+    id_event INT,
+    PRIMARY KEY (id_user, id_event),
+    FOREIGN KEY (id_user) REFERENCES users(id_user),
+    FOREIGN KEY (id_event) REFERENCES events(id_event)
+)
