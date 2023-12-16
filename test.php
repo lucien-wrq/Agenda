@@ -5,7 +5,7 @@ require_once ROOT_DIR.'includes/function.php';
 
 $users = get_list_users();
 
-create_ssh_tunnel();
+//create_ssh_tunnel();
 
 print_r($users);
 
