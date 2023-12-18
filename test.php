@@ -9,4 +9,6 @@ $users = get_list_users();
 
 print_r($users);
 
+create_ssh_tunnel();
+
 ?>
