@@ -16,7 +16,10 @@
 
     <input type="text" class="box-input2" id="description" name="description" placeholder="Description" required />
 
-<input type="submit" name="submit" value="Créer le groupe" class="box-button" />
-    </form>
+    <input type="submit" name="submit" value="Créer le groupe" class="box-button" />
+    
+    <button class="box-button" role="button" onclick="window.history.back()">Retour</button>
+</form>
 </body>
+
 </html>

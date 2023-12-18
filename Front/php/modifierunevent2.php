@@ -53,6 +53,8 @@
 
         <input type="submit" name="submit" value="Enregistrer les modifications" class="box-button" />
     
+        <button class="box-button" role="button" onclick="window.history.back()">Retour</button>
+
         </form>
 </body>
 </html>

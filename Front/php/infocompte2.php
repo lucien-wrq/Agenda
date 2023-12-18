@@ -20,11 +20,12 @@ if($_SESSION['user_role'] == 1){
 <div class="user-info">
         <h2>Informations du compte utilisateur</h2>
         <div class="info">
-            <p><strong>Prénom:</strong> <?php echo ($_SESSION["user_firstname"]); ?> </p>
-            <p><strong>Nom:</strong> <?php echo ($_SESSION["user_lastname"]); ?> </p>
+            <p><strong>Nom:</strong> <?php echo ($_SESSION["user_firstname"]); ?> </p>
+            <p><strong>Prénom:</strong> <?php echo ($_SESSION["user_lastname"]); ?> </p>
             <p><strong>Adresse e-mail:</strong> <?php echo ($_SESSION["user_email"]); ?> </p>
             <p><strong>Role :</strong> <?php echo ($role); ?> </p>
         </div>
+        <a href="page_admin.php"><button class="button-19" role="button">Retour</button></a>
     </div>
 
 </body>

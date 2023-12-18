@@ -51,6 +51,8 @@
         <br><input type="datetime-local" id="end_date" name="end_date" required>
 
         <input type="submit" name="submit" value="Valider" class="box-button" />
+
+        <button class="box-button" role="button" onclick="window.history.back()">Retour</button>
     </form>
 </body>
 </html>

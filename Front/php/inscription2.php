@@ -52,6 +52,8 @@
         </select><br>
         
         <input type="submit" name="submit" value="S'inscrire" class="box-button" />
+
+        <button class="box-button" role="button" onclick="window.history.back()">Retour</button>
     </form>
 </body>
 </html>
