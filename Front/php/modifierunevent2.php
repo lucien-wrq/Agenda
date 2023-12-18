@@ -26,7 +26,7 @@
                         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
                         // Récupération des labels et ID des événements depuis la base de données
-                        $sql = "SELECT id_event, label FROM events WHERE id_user = :id_user";
+                        $sql = "SELECT id_event, label FROM events WHERE creator_id = :id_user";
                         $stmt = $db->query($sql);
                         $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
