@@ -5,10 +5,22 @@
   --timeHeight: 60px;
   --calBgColor: ;
   --eventBorderColor: #C1E9F2;
-  --eventColor1: #fafafa;
-  --eventColor2: #fafafa;
-  --eventColor3: #fafafa;
-  --eventColor4: #fafafa;
+}
+
+.dayLun {
+  background-color: #56baed;
+}
+.dayMar {
+  background-color:#06ee99 ;
+}
+.dayMer {
+  background-color:#deee06 ;
+}
+.dayJeu {
+  background-color:#6260cb ;
+}
+.dayVen {
+  background-color:#ee06c3 ;
 }
   
   i {

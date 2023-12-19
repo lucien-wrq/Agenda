@@ -100,7 +100,7 @@ echo ("Bienvenu ". $_SESSION["user_lastname"]);
     </div>
 
   <div class="days">
-    <div class="day Lun">
+    <div class="dayLun">
       <div class="date">
         <p class="date-num"></p>
         <p class="date-day">Lundi</p>
@@ -115,11 +115,11 @@ echo ("Bienvenu ". $_SESSION["user_lastname"]);
           <p class="time"></p>
         </div>
         <div class="event start-11 end-16 securities">
-          <p class="title"></p>
+          <p class="title">Culture G</p>
           <p class="time"></p>
         </div>
         <div class="event start-16 end-21 securities">
-          <p class="title"></p>
+          <p class="title">SEO</p>
           <p class="time"></p>
         </div>
         <div class="event start-21 end-26 securities">
@@ -128,13 +128,13 @@ echo ("Bienvenu ". $_SESSION["user_lastname"]);
         </div>
       </div>
     </div>
-    <div class="day Mar">
+    <div class="dayMar">
       <div class="date">
         <p class="date-num"></p>
         <p class="date-day">Mardi</p>
       </div>
       <div class="events">
-        <div class="event start-01 end-06 corp-fi">
+      <div class="event start-01 end-06 corp-fi">
           <p class="title"></p>
           <p class="time"></p>
         </div>
@@ -143,11 +143,11 @@ echo ("Bienvenu ". $_SESSION["user_lastname"]);
           <p class="time"></p>
         </div>
         <div class="event start-11 end-16 ent-law">
-          <p class="title"></p>
+          <p class="title">MARKETING</p>
           <p class="time"></p>
         </div>
         <div class="event start-16 end-21 securities">
-          <p class="title"></p>
+          <p class="title">PHP AVEC FAOUZIA LA GOAT</p>
           <p class="time"></p>
         </div>
         <div class="event start-21 end-26 securities">
@@ -156,7 +156,7 @@ echo ("Bienvenu ". $_SESSION["user_lastname"]);
         </div>
       </div>
     </div>
-    <div class="day Mer">
+    <div class="dayMer">
       <div class="date">
         <p class="date-num"></p>
         <p class="date-day">Mercredi</p>
@@ -171,11 +171,11 @@ echo ("Bienvenu ". $_SESSION["user_lastname"]);
           <p class="time"></p>
         </div>
         <div class="event start-11 end-16 ent-law">
-          <p class="title"></p>
+          <p class="title">RESEAU</p>
           <p class="time"></p>
         </div>
         <div class="event start-16 end-21 securities">
-          <p class="title"></p>
+          <p class="title">GOOGLE ADS</p>
           <p class="time"></p>
         </div>
         <div class="event start-21 end-26 securities">
@@ -184,7 +184,7 @@ echo ("Bienvenu ". $_SESSION["user_lastname"]);
         </div>
       </div>
     </div>
-    <div class="day Jeu">
+    <div class="dayJeu">
       <div class="date">
         <p class="date-num"></p>
         <p class="date-day">Jeudi</p>
@@ -199,11 +199,11 @@ echo ("Bienvenu ". $_SESSION["user_lastname"]);
           <p class="time"></p>
         </div>
         <div class="event start-11 end-16 ent-law">
-          <p class="title"></p>
+          <p class="title">SOLUTION WEB</p>
           <p class="time"></p>
         </div>
         <div class="event start-16 end-21 securities">
-          <p class="title"></p>
+          <p class="title">HTML5/CSS</p>
           <p class="time"></p>
         </div>
         <div class="event start-21 end-26 securities">
@@ -212,7 +212,7 @@ echo ("Bienvenu ". $_SESSION["user_lastname"]);
         </div>
       </div>
     </div>
-    <div class="day Ven">
+    <div class="dayVen">
       <div class="date">
         <p class="date-num"></p>
         <p class="date-day">Vendredi</p>
@@ -227,17 +227,17 @@ echo ("Bienvenu ". $_SESSION["user_lastname"]);
           <p class="time"></p>
         </div>
         <div class="event start-11 end-16 ent-law">
-          <p class="title"></p>
+          <p class="title">BDD AVEC GABER</p>
           <p class="time"></p>
         </div>
         <div class="event start-16 end-21 securities">
-          <p class="title"></p>
+          <p class="title">ANGLAIS</p>
           <p class="time"></p>
         </div>
         <div class="event start-21 end-26 securities">
           <p class="title"></p>
           <p class="time"></p>
-        </div>
+        </div>  
       </div>
     </div>
   </div>
