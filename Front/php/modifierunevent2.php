@@ -43,7 +43,7 @@
         </select><br>
 
         <label for="eventName">Nom de l'Événement :</label>
-        <input type="text" id="eventName" name="eventName" placeholder = "Nom " required><br>
+        <input type="text" id="label" name="label" placeholder = "Nom " required><br>
         
         <label for="eventStartDate">Date de Début :</label>
         <br><input type="datetime-local" id="eventStartDate" name="eventStartDate" required><br>
