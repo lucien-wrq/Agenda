@@ -26,7 +26,7 @@
                         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
                         // Récupération des labels et ID des événements depuis la base de données
-                        $sql = "SELECT id_event, label FROM events WHERE creator_id = :id_user";
+                        $sql = "SELECT id_event, label FROM events"; // pour après prévoir la verrif de l'id du createur git
                         $stmt = $db->query($sql);
                         $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -43,7 +43,7 @@
         </select><br>
 
         <label for="eventName">Nom de l'Événement :</label>
-        <input type="text" id="eventName" name="eventName" placeholder = "Nom " required><br>
+        <input type="text" id="label" name="label" placeholder = "Nom " required><br>
         
         <label for="eventStartDate">Date de Début :</label>
         <br><input type="datetime-local" id="eventStartDate" name="eventStartDate" required><br>
