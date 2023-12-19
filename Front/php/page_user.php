@@ -2,6 +2,7 @@
 // Commencer une nouvelle session ou reprendre une session existante
 session_start();
 echo ("Bienvenu ". $_SESSION["user_lastname"]);
+
 ?>
 
 <DOCTYPE html>
@@ -24,7 +25,7 @@ echo ("Bienvenu ". $_SESSION["user_lastname"]);
 </form>
 <?php
   date_default_timezone_set('Europe/Paris');
-
+  
   // Vérifier si une date a été sélectionnée
   if (isset($_POST['date'])) {
       // Utiliser la date sélectionnée
@@ -44,6 +45,32 @@ echo ("Bienvenu ". $_SESSION["user_lastname"]);
   
   // Afficher la période de la semaine sélectionnée
   echo "Semaine du " . date('d/m/Y', $monday) . " au " . date('d/m/Y', $sunday);
+
+    try {
+      $db = new PDO('sqlite:../../Back/BDD/BDD2.db');
+      $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Set error mode to exception
+  } catch (PDOException $e) {
+      die("Erreur de connexion : " . $e->getMessage());
+  }
+
+  $id_user = $_SESSION['user_id'];
+
+  $sql = "SELECT id_team FROM users_has_teams WHERE id_user = :id_user";
+
+  $stmt = $db->prepare($sql);
+  $stmt->execute(); 
+  
+  // Récupérer les résultats de la requête SQL en utilisant la méthode fetchAll()
+  $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+  $sql2 = 'SELECT id_agenda FROM teams_has_agendas WHERE id_team = :results';
+
+  $stmt2 = $db->prepare($sql2);
+  $stmt2->execute(); 
+  
+  // Récupérer les résultats de la requête SQL en utilisant la méthode fetchAll()
+  $results2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+  
   ?>
   </section>
 
