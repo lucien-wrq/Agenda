@@ -1,8 +1,13 @@
 <?php
 // Commencer une nouvelle session ou reprendre une session existante
 session_start();
-echo ("Bienvenu ". $_SESSION["user_lastname"]);
-
+try {
+  $db = new PDO('sqlite:../../Back/BDD/BDD2.db');
+  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Set error mode to exception
+} catch (PDOException $e) {
+  die("Erreur de connexion : " . $e->getMessage());
+}
+echo ("Bienvenue ". $_SESSION["user_lastname"]);
 ?>
 
 <DOCTYPE html>
@@ -127,135 +132,309 @@ echo ("Bienvenu ". $_SESSION["user_lastname"]);
       </div>
       <div class="events">
         <div class="event start-01 end-06 securities">
-          <p class="title"></p>
-          <p class="time"></p>
+          <p class="title"><?php $LundiSemaine1 = "SELECT events.id_event, events.label, events.start_date FROM events WHERE start_date= ? "; 
+          
+          $stmt = $db->prepare($LundiSemaine1);
+          $stmt->execute([$selectedDate]);
+          $result = $stmt->fetch(PDO::FETCH_ASSOC);
+          echo "<pre>";
+          echo $result;
+          echo "</pre>"; ?></p>
+          <p class="time"><?php $DebutLundiSemaine1 = "SELECT events.start_date FROM events WHERE start_date = " ?></p>
         </div>
         <div class="event start-06 end-11 securities">
-          <p class="title"></p>
+          <p class="title"><?php $LundiSemaine2 = "SELECT events.id_event, events.label, events.start_date FROM events WHERE start_date= ? "; 
+          
+          $stmt = $db->prepare($LundiSemaine2);
+          $stmt->execute([$selectedDate]);
+          $result = $stmt->fetch(PDO::FETCH_ASSOC);
+          echo "<pre>";
+          print_r($result);
+          echo "</pre>"; ?></p>
           <p class="time"></p>
         </div>
         <div class="event start-11 end-16 securities">
-          <p class="title"></p>
+          <p class="title"><?php $LundiSemaine3 = "SELECT events.id_event, events.label, events.start_date FROM events WHERE start_date= ? "; 
+          
+          $stmt = $db->prepare($LundiSemaine3);
+          $stmt->execute([$selectedDate]);
+          $result = $stmt->fetch(PDO::FETCH_ASSOC);
+          echo "<pre>";
+          print_r($result);
+          echo "</pre>"; ?></p>
           <p class="time"></p>
         </div>
         <div class="event start-16 end-21 securities">
-          <p class="title"></p>
+          <p class="title"><?php $LundiSemaine4 = "SELECT events.id_event, events.label, events.start_date FROM events WHERE start_date= ? "; 
+          
+          $stmt = $db->prepare($LundiSemaine4);
+          $stmt->execute([$selectedDate]);
+          $result = $stmt->fetch(PDO::FETCH_ASSOC);
+          echo "<pre>";
+          print_r($result);
+          echo "</pre>"; ?></p>
           <p class="time"></p>
         </div>
         <div class="event start-21 end-26 securities">
-          <p class="title"></p>
+          <p class="title"><?php $LundiSemaine5 = "SELECT events.id_event, events.label, events.start_date FROM events WHERE start_date= ? "; 
+          
+          $stmt = $db->prepare($LundiSemaine5);
+          $stmt->execute([$selectedDate]);
+          $result = $stmt->fetch(PDO::FETCH_ASSOC);
+          echo "<pre>";
+          print_r($result);
+          echo "</pre>"; ?></p>
           <p class="time"></p>
         </div>
       </div>
     </div>
     <div class="day Mar">
       <div class="date">
-        <p class="date-num"></p>
         <p class="date-day">Mardi</p>
       </div>
       <div class="events">
         <div class="event start-01 end-06 corp-fi">
-          <p class="title"></p>
+          <p class="title"><?php $MardiSemaine1 = "SELECT events.id_event, events.label, events.start_date FROM events WHERE start_date= ?+1 "; 
+          
+          $stmt = $db->prepare($MardiSemaine1);
+          $stmt->execute([$selectedDate]);
+          $result = $stmt->fetch(PDO::FETCH_ASSOC);
+          echo "<pre>";
+          print_r($result);
+          echo "</pre>"; ?></p>
           <p class="time"></p>
         </div>
         <div class="event start-06 end-11 ent-law">
-          <p class="title"></p>
+          <p class="title"><?php $MardiSemaine2 = "SELECT events.id_event, events.label, events.start_date FROM events WHERE start_date= ?+1 "; 
+          
+          $stmt = $db->prepare($MardiSemaine2);
+          $stmt->execute([$selectedDate]);
+          $result = $stmt->fetch(PDO::FETCH_ASSOC);
+          echo "<pre>";
+          print_r($result);
+          echo "</pre>"; ?></p>
           <p class="time"></p>
         </div>
         <div class="event start-11 end-16 ent-law">
-          <p class="title"></p>
+          <p class="title"><?php $MardiSemaine3 = "SELECT events.id_event, events.label, events.start_date FROM events WHERE start_date= ?+1 "; 
+          
+          $stmt = $db->prepare($LundiSemaine3);
+          $stmt->execute([$selectedDate]);
+          $result = $stmt->fetch(PDO::FETCH_ASSOC);
+          echo "<pre>";
+          print_r($result);
+          echo "</pre>"; ?></p>
           <p class="time"></p>
         </div>
         <div class="event start-16 end-21 securities">
-          <p class="title"></p>
+          <p class="title"><?php $MardiSemaine4 = "SELECT events.id_event, events.label, events.start_date FROM events WHERE start_date= ?+1 "; 
+          
+          $stmt = $db->prepare($MardiSemaine4);
+          $stmt->execute([$selectedDate]);
+          $result = $stmt->fetch(PDO::FETCH_ASSOC);
+          echo "<pre>";
+          print_r($result);
+          echo "</pre>"; ?></p>
           <p class="time"></p>
         </div>
         <div class="event start-21 end-26 securities">
-          <p class="title"></p>
+          <p class="title"><?php $MardiSemaine5 = "SELECT events.id_event, events.label, events.start_date FROM events WHERE start_date= ?+1 "; 
+          
+          $stmt = $db->prepare($MardiSemaine5);
+          $stmt->execute([$selectedDate]);
+          $result = $stmt->fetch(PDO::FETCH_ASSOC);
+          echo "<pre>";
+          print_r($result);
+          echo "</pre>"; ?></p>
           <p class="time"></p>
         </div>
       </div>
     </div>
     <div class="day Mer">
       <div class="date">
-        <p class="date-num"></p>
+        
         <p class="date-day">Mercredi</p>
       </div>
       <div class="events">
       <div class="event start-01 end-06 corp-fi">
-          <p class="title"></p>
+          <p class="title"><?php $MercrediSemaine1 = "SELECT events.id_event, events.label, events.start_date FROM events WHERE start_date= ?+2 "; 
+          
+          $stmt = $db->prepare($MercrediSemaine1);
+          $stmt->execute([$selectedDate]);
+          $result = $stmt->fetch(PDO::FETCH_ASSOC);
+          echo "<pre>";
+          print_r($result);
+          echo "</pre>"; ?></p>
           <p class="time"></p>
         </div>
         <div class="event start-06 end-11 ent-law">
-          <p class="title"></p>
+          <p class="title"><?php $MercrediSemaine2 = "SELECT events.id_event, events.label, events.start_date FROM events WHERE start_date= ?+2 "; 
+          
+          $stmt = $db->prepare($MercrediSemaine2);
+          $stmt->execute([$selectedDate]);
+          $result = $stmt->fetch(PDO::FETCH_ASSOC);
+          echo "<pre>";
+          print_r($result);
+          echo "</pre>"; ?></p>
           <p class="time"></p>
         </div>
         <div class="event start-11 end-16 ent-law">
-          <p class="title"></p>
+          <p class="title"><?php $MercrediSemaine3 = "SELECT events.id_event, events.label, events.start_date FROM events WHERE start_date= ?+2 "; 
+          
+          $stmt = $db->prepare($MercrediSemaine3);
+          $stmt->execute([$selectedDate]);
+          $result = $stmt->fetch(PDO::FETCH_ASSOC);
+          echo "<pre>";
+          print_r($result);
+          echo "</pre>"; ?></p>
           <p class="time"></p>
         </div>
         <div class="event start-16 end-21 securities">
-          <p class="title"></p>
+          <p class="title"><?php $MercrediSemaine4 = "SELECT events.id_event, events.label, events.start_date FROM events WHERE start_date= ?+2 "; 
+          
+          $stmt = $db->prepare($MercrediSemaine4);
+          $stmt->execute([$selectedDate]);
+          $result = $stmt->fetch(PDO::FETCH_ASSOC);
+          echo "<pre>";
+          print_r($result);
+          echo "</pre>"; ?></p>
           <p class="time"></p>
         </div>
         <div class="event start-21 end-26 securities">
-          <p class="title"></p>
+          <p class="title"><?php $MercrediSemaine5 = "SELECT events.id_event, events.label, events.start_date FROM events WHERE start_date= ?+2 "; 
+          
+          $stmt = $db->prepare($MercrediSemaine5);
+          $stmt->execute([$selectedDate]);
+          $result = $stmt->fetch(PDO::FETCH_ASSOC);
+          echo "<pre>";
+          print_r($result);
+          echo "</pre>"; ?></p>
           <p class="time"></p>
         </div>
       </div>
     </div>
     <div class="day Jeu">
       <div class="date">
-        <p class="date-num"></p>
+        
         <p class="date-day">Jeudi</p>
       </div>
       <div class="events">
       <div class="event start-01 end-06 corp-fi">
-          <p class="title"></p>
+          <p class="title"><?php $JeudiSemaine1 = "SELECT events.id_event, events.label, events.start_date FROM events WHERE start_date= ?+3 "; 
+          
+          $stmt = $db->prepare($JeudiSemaine1);
+          $stmt->execute([$selectedDate]);
+          $result = $stmt->fetch(PDO::FETCH_ASSOC);
+          echo "<pre>";
+          print_r($result);
+          echo "</pre>"; ?></p>
           <p class="time"></p>
         </div>
         <div class="event start-06 end-11 ent-law">
-          <p class="title"></p>
+          <p class="title"><?php $JeudiSemaine2 = "SELECT events.id_event, events.label, events.start_date FROM events WHERE start_date= ?+3 "; 
+          
+          $stmt = $db->prepare($JeudiSemaine2);
+          $stmt->execute([$selectedDate]);
+          $result = $stmt->fetch(PDO::FETCH_ASSOC);
+          echo "<pre>";
+          print_r($result);
+          echo "</pre>"; ?></p>
           <p class="time"></p>
         </div>
         <div class="event start-11 end-16 ent-law">
-          <p class="title"></p>
+          <p class="title"><?php $JeudiSemaine3 = "SELECT events.id_event, events.label, events.start_date FROM events WHERE start_date= ?+3 "; 
+          
+          $stmt = $db->prepare($JeudiSemaine3);
+          $stmt->execute([$selectedDate]);
+          $result = $stmt->fetch(PDO::FETCH_ASSOC);
+          echo "<pre>";
+          print_r($result);
+          echo "</pre>"; ?></p>
           <p class="time"></p>
         </div>
         <div class="event start-16 end-21 securities">
-          <p class="title"></p>
+          <p class="title"><?php $JeudiSemaine4 = "SELECT events.id_event, events.label, events.start_date FROM events WHERE start_date= ?+3 "; 
+          
+          $stmt = $db->prepare($JeudiSemaine4);
+          $stmt->execute([$selectedDate]);
+          $result = $stmt->fetch(PDO::FETCH_ASSOC);
+          echo "<pre>";
+          print_r($result);
+          echo "</pre>"; ?></p>
           <p class="time"></p>
         </div>
         <div class="event start-21 end-26 securities">
-          <p class="title"></p>
+          <p class="title"><?php $JeudiSemaine5 = "SELECT events.id_event, events.label, events.start_date FROM events WHERE start_date= ?+3 "; 
+          
+          $stmt = $db->prepare($JeudiSemaine5);
+          $stmt->execute([$selectedDate]);
+          $result = $stmt->fetch(PDO::FETCH_ASSOC);
+          echo "<pre>";
+          print_r($result);
+          echo "</pre>"; ?></p>
           <p class="time"></p>
         </div>
       </div>
     </div>
     <div class="day Ven">
       <div class="date">
-        <p class="date-num"></p>
+        
         <p class="date-day">Vendredi</p>
       </div>
       <div class="events">
       <div class="event start-01 end-06 corp-fi">
-          <p class="title"></p>
+          <p class="title"><?php $VendrediSemaine1 = "SELECT events.id_event, events.label, events.start_date FROM events WHERE start_date= ?+4 "; 
+          
+          $stmt = $db->prepare($VendrediSemaine1);
+          $stmt->execute([$selectedDate]);
+          $result = $stmt->fetch(PDO::FETCH_ASSOC);
+          echo "<pre>";
+          print_r($result);
+          echo "</pre>"; ?></p>
           <p class="time"></p>
         </div>
         <div class="event start-06 end-11 ent-law">
-          <p class="title"></p>
+          <p class="title"><?php $VendrediSemaine2 = "SELECT events.id_event, events.label, events.start_date FROM events WHERE start_date= ?+4 "; 
+          
+          $stmt = $db->prepare($VendrediSemaine2);
+          $stmt->execute([$selectedDate]);
+          $result = $stmt->fetch(PDO::FETCH_ASSOC);
+          echo "<pre>";
+          print_r($result);
+          echo "</pre>"; ?></p>
           <p class="time"></p>
         </div>
         <div class="event start-11 end-16 ent-law">
-          <p class="title"></p>
+          <p class="title"><?php $VendrediSemaine3 = "SELECT events.id_event, events.label, events.start_date FROM events WHERE start_date= ?+4 "; 
+          
+          $stmt = $db->prepare($VendrediSemaine3);
+          $stmt->execute([$selectedDate]);
+          $result = $stmt->fetch(PDO::FETCH_ASSOC);
+          echo "<pre>";
+          print_r($result);
+          echo "</pre>"; ?></p>
           <p class="time"></p>
         </div>
         <div class="event start-16 end-21 securities">
-          <p class="title"></p>
+          <p class="title"><?php $VendrediSemaine4 = "SELECT events.id_event, events.label, events.start_date FROM events WHERE start_date= ?+4 "; 
+          
+          $stmt = $db->prepare($VendrediSemaine4);
+          $stmt->execute([$selectedDate]);
+          $result = $stmt->fetch(PDO::FETCH_ASSOC);
+          echo "<pre>";
+          print_r($result);
+          echo "</pre>"; ?></p>
           <p class="time"></p>
         </div>
         <div class="event start-21 end-26 securities">
-          <p class="title"></p>
+          <p class="title"><?php $VendrediSemaine5 = "SELECT events.id_event, events.label, events.start_date FROM events WHERE start_date= ?+4 "; 
+          
+          $stmt = $db->prepare($VendrediSemaine5);
+          $stmt->execute([$selectedDate]);
+          $result = $stmt->fetch(PDO::FETCH_ASSOC);
+          echo "<pre>";
+          print_r($result);
+          echo "</pre>"; ?></p>
           <p class="time"></p>
         </div>
       </div>
